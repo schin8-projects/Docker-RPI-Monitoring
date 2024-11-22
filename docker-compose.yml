@@ -77,8 +77,10 @@ services:
 #      - '--storage.tsdb.retention.size=10GB'
     networks:
       - internal
-    expose:
-      - 9090
+    # expose:
+    #   - 9090
+    ports:
+      - "9090:9090"
     volumes:
       # /!\ To be modified depending on your needs /!\
       - /home/pi/installs/git/Docker-RPI-Monitoring/prometheus/data:/prometheus
