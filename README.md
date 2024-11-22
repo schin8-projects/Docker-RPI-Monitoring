@@ -6,13 +6,35 @@ This version exposes the Prometheus service port to allow monitoring of other ho
 
 # Setup
 
-Clone this repository, in this case we'll clone to the "/home/pi/installs" directory.
+Create grafana user
 
-Next make sure to update the user and groups
+```
+ sudo groupadd -g 472 grafana
+ sudo useradd grafana -u 472 -g 472 -r
+  
+```
+
+As the pi user
+
+```
+cd ~
+mkdir installs
+cd $_
+git clone https://github.com/schin8-projects/Docker-RPI-Monitoring.git
+cd Docker-RPI-Monitoring
+```
+
+
 
 ```
 mkdir -p prometheus/data grafana/data && \
 sudo chown -R 472:472 grafana/ && \
 sudo chown -R 65534:65534 prometheus/
+```
+
+Startup Stack
+
+```
+docker compose up
 ```
 

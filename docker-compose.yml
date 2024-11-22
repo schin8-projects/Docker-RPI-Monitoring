@@ -10,7 +10,7 @@ services:
     ports:
       - "3000:3000"
     env_file:
-      - ./grafana/.env
+      - /home/pi/installs/git/Docker-RPI-Monitoring/grafana/.env
     volumes:
       # /!\ To be modified depending on your needs /!\
       - /home/pi/installs/git/Docker-RPI-Monitoring/grafana/data:/var/lib/grafana
