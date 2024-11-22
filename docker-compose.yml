@@ -13,8 +13,8 @@ services:
       - ./grafana/.env
     volumes:
       # /!\ To be modified depending on your needs /!\
-      - ./grafana/data:/var/lib/grafana
-      - ./grafana/provisioning:/etc/grafana/provisioning
+      - /home/pi/installs/git/Docker-RPI-Monitoring/grafana/data:/var/lib/grafana
+      - /home/pi/installs/git/Docker-RPI-Monitoring/grafana/provisioning:/etc/grafana/provisioning
     depends_on:
       - prometheus
 
@@ -81,8 +81,8 @@ services:
       - 9090
     volumes:
       # /!\ To be modified depending on your needs /!\
-      - ./prometheus/data:/prometheus
-      - ./prometheus:/etc/prometheus/
+      - /home/pi/installs/git/Docker-RPI-Monitoring/prometheus/data:/prometheus
+      - /home/pi/installs/git/Docker-RPI-Monitoring/prometheus:/etc/prometheus/
     depends_on:
       - cadvisor
       - node-exporter
