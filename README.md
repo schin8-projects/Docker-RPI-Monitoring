@@ -33,8 +33,14 @@ sudo chown -R 65534:65534 prometheus/
 ```
 
 Startup Stack
+Portainer installed docker uses "docker compose", otherwise try "docker-compose"
 
 ```
-docker compose up
+# Install all monitoring components
+docker compose up -d
+
+# Install only the collectors
+docker compose -f docker-compose.collectors.yaml up -d
+
 ```
 
